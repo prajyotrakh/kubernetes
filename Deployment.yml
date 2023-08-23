@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: swiggyapp
+  name: swiggydeployment
+spec:
+  replicas: 3      
+  selector:
+    matchLabels:
+      app: swiggyapp
+  template:
+    metadata: 
+      labels:
+        app: swiggyapp
+    spec:
+      containers:
+        - name: cont1
+          image: prajyotrakh/registershop:latest
+                     
+
+
+        
