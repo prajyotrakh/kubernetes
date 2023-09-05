@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: your-deployment
+  name: tomcat-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: your-app
+      app: tomcat
   template:
     metadata:
       labels:
-        app: your-app
+        app: tomcat
     spec:
       containers:
-      - name: your-container
-        image: your-private-registry-image:tag
+      - name: tomcat-container
+        image: prajyotrakh/tomcatdeploy
       imagePullSecrets:
-      - name: your-secret-name  # Reference the secret here
+      - name: docker-registry  # Reference the secret here
 
